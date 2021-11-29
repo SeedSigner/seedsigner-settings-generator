@@ -1,44 +1,209 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
 <head>
-<title>Cross-Browser QRCode generator for Javascript</title>
+<title>SeedSigner Settings QR Generator</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
-<script type="text/javascript" src="jquery.min.js"></script>
-<script type="text/javascript" src="qrcode.js"></script>
+<link rel="icon" href="img/icon_192x192.png"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/qrcode.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="js/bootstrap.bundle.min.js"></script>
+<style>
+	body {
+		background-color: #ccc;
+		text-align: center;
+	}
+	.top_nav {
+		height: 100px;
+		background-color: black;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-bottom: 1.5em;
+	}
+	.top_nav .logo {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.top_nav .title {
+		margin-left: 240px;
+		text-align: left;
+		color: #ff7300;
+		font-size: 2em;
+	}
+
+	.qrcode_container {
+		display: inline-block;
+		margin: 1em;
+		padding: 1em 2em 1em 2em;
+		color: green;
+		background-color: white;
+		text-align: center;
+		border-radius: 1em;
+	}
+	.qrcode {
+		margin: 1em 0 0.5em 5px;
+	}
+	.note {
+		font-style: italic;
+	}
+
+	.input_table {
+		display: inline-block;
+		vertical-align: top;
+		margin: 1em;
+		font-size: 1.25em;
+	}
+	.input_table td {
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+		text-align: left;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
+	.input_table .label {
+		text-align: right;
+	}
+
+	.config_preview {
+		margin-top: 3em;
+		margin-bottom: 2em;
+		text-align: center;
+	}
+	.config_preview pre {
+		display: inline-block;
+		text-align: left;
+	}
+
+
+	@media print {
+		.top_nav, .config_preview {
+			display: none;
+		}
+		.qrcode {
+		}
+		.input_table {
+			font-size: 0.5em;
+		}
+		.form-select-lg {
+			font-size: 1em;
+			padding: 0;
+		}
+	}
+
+
+</style>
 </head>
 <body>
-<input id="text" type="text" value="http://jindo.dev.naver.com/collie" style="width:80%" /><br />
-<div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div>
+	<div class="top_nav">
+		<img class="logo" src="img/logo_black_240.png"/>
+		<div class="title">Settings QR Generator</div>
+	</div>
 
-<script type="text/javascript">
-var qrcode = new QRCode(document.getElementById("qrcode"), {
-	width : 100,
-	height : 100
-});
+	<div class="qrcode_container">
+		<h2>Settings QR</h2>
+		<div class="qrcode" id="qrcode"></div>
+		<div class="note">There is NO private information in this QR code.<br/>It is safe to print or share.</div>
+	</div>
 
-function makeCode () {		
-	var elText = document.getElementById("text");
-	
-	if (!elText.value) {
-		alert("Input a text");
-		elText.focus();
-		return;
-	}
-	
-	qrcode.makeCode(elText.value);
-}
 
-makeCode();
+	<table class="input_table">
+		<tr>
+			<td class="label">Xpub export</td>
+			<td>
+				<select id="xpub_export" class="form-select-lg" onchange="buildConfig();">
+					<option value="0">Disabled</option>
+					<option value="1" selected>Enabled</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="label">Xpub export: Sig types</td>
+			<td>
+				<select id="sig_types" class="form-select-lg" onchange="buildConfig();">
+					<option value="s">Single Sig only</option>
+					<option value="m">Multisig only</option>
+					<option value="b" selected>Single Sig & Multisig</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="label">Xpub export: Script types</td>
+			<td>
+				<label for="script_types_na"><input type="checkbox" checked name="script_types" id="script_types_na" value="na" class="" onchange="buildConfig();">&nbsp;Native Segwit</label><br/>
+				<label for="script_types_ne"><input type="checkbox"         name="script_types" id="script_types_ne" value="ne" class="" onchange="buildConfig();">&nbsp;Nested Segwit (Legacy)</label><br/>
+				<label for="script_types_tr"><input type="checkbox" checked name="script_types" id="script_types_tr" value="tr" class="" onchange="buildConfig();">&nbsp;Taproot</label><br/>
+				<label for="script_types_cu"><input type="checkbox"         name="script_types" id="script_types_cu" value="cu" class="" onchange="buildConfig();">&nbsp;Custom Derivation Path</label><br/>
+			</td>
+		</tr>
+		<tr>
+			<td class="label">Passphrase</td>
+			<td>
+				<select id="passphrase" class="form-select-lg" onchange="buildConfig();">
+					<option value="0">Disabled</option>
+					<option value="1" selected>Enabled</option>
+					<option value="2">Prompt</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="label">Privacy warnings</td>
+			<td>
+				<select id="privacy_warnings" class="form-select-lg" onchange="buildConfig();">
+					<option value="0">Disabled</option>
+					<option value="1" selected>Enabled</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="label">Dire warnings</td>
+			<td>
+				<select id="dire_warnings" class="form-select-lg" onchange="buildConfig();">
+					<option value="0">Disabled</option>
+					<option value="1" selected>Enabled</option>
+				</select>
+			</td>
+		</tr>
+	</table>
 
-$("#text").
-	on("blur", function () {
-		makeCode();
-	}).
-	on("keydown", function (e) {
-		if (e.keyCode == 13) {
-			makeCode();
+	<br/>
+	<div class="config_preview" id="config_preview"></div>
+
+
+
+	<script type="text/javascript">
+		var qrcode = new QRCode(document.getElementById("qrcode"), {
+			width : 400,
+			height : 400,
+			colorDark : "green",
+			colorLight : "white",
+			correctLevel : QRCode.CorrectLevel.L
+		});
+
+		function buildConfig() {
+			var settings = [`type=settings`];
+			settings.push(`version=1`);
+			settings.push(`xpub=${parseInt($("#xpub_export").val())}`);
+			settings.push(`sigs=${$("#sig_types").val()}`);
+			if ($("#xpub_export").val() == "0") {
+				$("input[name='script_types']").prop('disabled', true);
+			} else {
+				$("input[name='script_types']").prop('disabled', false);
+				settings.push(`scripts=${$("input[name='script_types']:checked").map(function () {return this.value;}).get().join()}`);
+			}
+			settings.push(`passphrase=${parseInt($("#passphrase").val())}`);
+			settings.push(`priv_warn=${parseInt($("#privacy_warnings").val())}`);
+			settings.push(`dire_warn=${parseInt($("#dire_warnings").val())}`);
+
+			var config = settings.join(" ");
+			$("#config_preview").html("<pre>" + settings.join("\n") + "</pre>");
+			qrcode.makeCode(config);
 		}
-	});
-</script>
+		
+		$(document).ready(function() {
+			buildConfig();
+		});
+	</script>
 </body>
