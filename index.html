@@ -167,6 +167,14 @@
 			</td>
 		</tr>
 		<tr>
+			<td class="label label-top">Coordinators:</td>
+			<td>
+				<label for="coordinator_bw"><input type="checkbox" checked name="coordinator" id="coordinator_bw" value="bw" class="" onchange="buildConfig();">&nbsp;BlueWallet</label><br/>
+				<label for="coordinator_sw"><input type="checkbox" checked name="coordinator" id="coordinator_sw" value="sw" class="" onchange="buildConfig();">&nbsp;Sparrow</label><br/>
+				<label for="coordinator_sd"><input type="checkbox" checked name="coordinator" id="coordinator_sd" value="sd" class="" onchange="buildConfig();">&nbsp;Specter&nbsp;Desktop</label><br/>
+			</td>
+		</tr>
+		<tr>
 			<td class="label">Passphrase:</td>
 			<td>
 				<select id="passphrase" class="form-select" onchange="buildConfig();">
@@ -174,14 +182,6 @@
 					<option value="1" selected>Enabled in "Advanced"</option>
 					<option value="2">Always Prompt</option>
 				</select>
-			</td>
-		</tr>
-		<tr>
-			<td class="label label-top">Coordinators:</td>
-			<td>
-				<label for="coordinator_bw"><input type="checkbox" checked name="coordinator" id="coordinator_bw" value="bw" class="" onchange="buildConfig();">&nbsp;BlueWallet</label><br/>
-				<label for="coordinator_sw"><input type="checkbox" checked name="coordinator" id="coordinator_sw" value="sw" class="" onchange="buildConfig();">&nbsp;Sparrow</label><br/>
-				<label for="coordinator_sd"><input type="checkbox" checked name="coordinator" id="coordinator_sd" value="sd" class="" onchange="buildConfig();">&nbsp;Specter&nbsp;Desktop</label><br/>
 			</td>
 		</tr>
 		<tr>
