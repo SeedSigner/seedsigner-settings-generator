@@ -226,10 +226,10 @@
 			}
 			settings.push(`xpub=${parseInt($("#xpub_export").val())}`);
 			if ($("#xpub_export").val() == "0") {
-				$("#sig_types").prop('disabled', true);
+				$("input[name='sig_types']").prop('disabled', true);
 				$("input[name='script_types']").prop('disabled', true);
 			} else {
-				$("#sig_types").prop('disabled', false);
+				$("input[name='sig_types']").prop('disabled', false);
 				$("input[name='script_types']").prop('disabled', false);
 				settings.push(`sigs=${$("input[name='sig_types']:checked").map(function () {return this.value;}).get().join()}`);
 				settings.push(`scripts=${$("input[name='script_types']:checked").map(function () {return this.value;}).get().join()}`);
