@@ -167,6 +167,16 @@
 			</td>
 		</tr>
 		<tr>
+			<td class="label"></td>
+			<td>
+				<div class="label sublabel">Show Xpub details:</div>
+				<select id="xpub_details" class="form-select" onchange="buildConfig();">
+					<option value="0">Disabled</option>
+					<option value="1" selected>Enabled</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
 			<td class="label label-top">Coordinators:</td>
 			<td>
 				<label for="coordinator_bw"><input type="checkbox" checked name="coordinator" id="coordinator_bw" value="bw" class="" onchange="buildConfig();">&nbsp;BlueWallet</label><br/>
@@ -179,8 +189,8 @@
 			<td>
 				<select id="passphrase" class="form-select" onchange="buildConfig();">
 					<option value="0">Disabled</option>
-					<option value="1" selected>Enabled in "Advanced"</option>
-					<option value="2">Always Prompt</option>
+					<option value="1" selected>Enabled</option>
+					<option value="2">Always ask</option>
 				</select>
 			</td>
 		</tr>
@@ -234,6 +244,7 @@
 				settings.push(`sigs=${$("input[name='sig_types']:checked").map(function () {return this.value;}).get().join()}`);
 				settings.push(`scripts=${$("input[name='script_types']:checked").map(function () {return this.value;}).get().join()}`);
 			}
+			settings.push(`xp_det=${parseInt($("#xpub_details").val())}`);
 			settings.push(`passphrase=${parseInt($("#passphrase").val())}`);
 			settings.push(`coord=${$("input[name='coordinator']:checked").map(function () {return this.value;}).get().join()}`);
 			settings.push(`priv_warn=${parseInt($("#privacy_warnings").val())}`);
