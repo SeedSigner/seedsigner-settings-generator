@@ -11,8 +11,8 @@
             "help_text": null,
             "selection_options": [
                 {
-                    "option_name": "en",
-                    "value": "English"
+                    "display_name": "English",
+                    "value": "en"
                 }
             ],
             "default_value": "en"
@@ -28,8 +28,8 @@
             "help_text": null,
             "selection_options": [
                 {
-                    "option_name": "en",
-                    "value": "English"
+                    "display_name": "English",
+                    "value": "en"
                 }
             ],
             "default_value": "en"
@@ -45,11 +45,11 @@
             "help_text": "Store Settings on SD card",
             "selection_options": [
                 {
-                    "option_name": "Enabled",
+                    "display_name": "Enabled",
                     "value": "Enabled"
                 },
                 {
-                    "option_name": "Disabled",
+                    "display_name": "Disabled",
                     "value": "Disabled"
                 }
             ],
@@ -66,15 +66,15 @@
             "help_text": null,
             "selection_options": [
                 {
-                    "option_name": "BlueWallet",
+                    "display_name": "BlueWallet",
                     "value": "BlueWallet"
                 },
                 {
-                    "option_name": "Sparrow",
+                    "display_name": "Sparrow",
                     "value": "Sparrow"
                 },
                 {
-                    "option_name": "Specter Desktop",
+                    "display_name": "Specter Desktop",
                     "value": "Specter Desktop"
                 }
             ],
@@ -95,16 +95,16 @@
             "help_text": null,
             "selection_options": [
                 {
-                    "option_name": "main",
-                    "value": "Mainnet"
+                    "display_name": "Mainnet",
+                    "value": "main"
                 },
                 {
-                    "option_name": "test",
-                    "value": "Testnet"
+                    "display_name": "Testnet",
+                    "value": "test"
                 },
                 {
-                    "option_name": "regtest",
-                    "value": "Regtest"
+                    "display_name": "Regtest",
+                    "value": "regtest"
                 }
             ],
             "default_value": "regtest"
@@ -120,16 +120,16 @@
             "help_text": null,
             "selection_options": [
                 {
-                    "option_name": "L",
-                    "value": "Low"
+                    "display_name": "Low",
+                    "value": "L"
                 },
                 {
-                    "option_name": "M",
-                    "value": "Medium"
+                    "display_name": "Medium",
+                    "value": "M"
                 },
                 {
-                    "option_name": "H",
-                    "value": "High"
+                    "display_name": "High",
+                    "value": "H"
                 }
             ],
             "default_value": "M"
@@ -145,11 +145,11 @@
             "help_text": null,
             "selection_options": [
                 {
-                    "option_name": "Enabled",
+                    "display_name": "Enabled",
                     "value": "Enabled"
                 },
                 {
-                    "option_name": "Disabled",
+                    "display_name": "Disabled",
                     "value": "Disabled"
                 }
             ],
@@ -166,12 +166,12 @@
             "help_text": null,
             "selection_options": [
                 {
-                    "option_name": "single_sig",
-                    "value": "Single Sig"
+                    "display_name": "Single Sig",
+                    "value": "single_sig"
                 },
                 {
-                    "option_name": "multisig",
-                    "value": "Multisig"
+                    "display_name": "Multisig",
+                    "value": "multisig"
                 }
             ],
             "default_value": [
@@ -190,20 +190,20 @@
             "help_text": null,
             "selection_options": [
                 {
-                    "option_name": "native_segwit",
-                    "value": "Native Segwit"
+                    "display_name": "Native Segwit",
+                    "value": "native_segwit"
                 },
                 {
-                    "option_name": "nested_segwit",
-                    "value": "Nested Segwit (legacy)"
+                    "display_name": "Nested Segwit (legacy)",
+                    "value": "nested_segwit"
                 },
                 {
-                    "option_name": "taproot",
-                    "value": "Taproot"
+                    "display_name": "Taproot",
+                    "value": "taproot"
                 },
                 {
-                    "option_name": "custom_derivation",
-                    "value": "Custom Derivation"
+                    "display_name": "Custom Derivation",
+                    "value": "custom_derivation"
                 }
             ],
             "default_value": [
@@ -222,11 +222,11 @@
             "help_text": null,
             "selection_options": [
                 {
-                    "option_name": "Enabled",
+                    "display_name": "Enabled",
                     "value": "Enabled"
                 },
                 {
-                    "option_name": "Disabled",
+                    "display_name": "Disabled",
                     "value": "Disabled"
                 }
             ],
@@ -243,11 +243,11 @@
             "help_text": null,
             "selection_options": [
                 {
-                    "option_name": "Enabled",
+                    "display_name": "Enabled",
                     "value": "Enabled"
                 },
                 {
-                    "option_name": "Disabled",
+                    "display_name": "Disabled",
                     "value": "Disabled"
                 }
             ],
@@ -264,20 +264,20 @@
             "help_text": null,
             "selection_options": [
                 {
-                    "option_name": 0,
-                    "value": "0\u00b0"
+                    "display_name": "0\u00b0",
+                    "value": 0
                 },
                 {
-                    "option_name": 90,
-                    "value": "90\u00b0"
+                    "display_name": "90\u00b0",
+                    "value": 90
                 },
                 {
-                    "option_name": 180,
-                    "value": "180\u00b0"
+                    "display_name": "180\u00b0",
+                    "value": 180
                 },
                 {
-                    "option_name": 270,
-                    "value": "270\u00b0"
+                    "display_name": "270\u00b0",
+                    "value": 270
                 }
             ],
             "default_value": 0
@@ -293,11 +293,11 @@
             "help_text": null,
             "selection_options": [
                 {
-                    "option_name": "Enabled",
+                    "display_name": "Enabled",
                     "value": "Enabled"
                 },
                 {
-                    "option_name": "Disabled",
+                    "display_name": "Disabled",
                     "value": "Disabled"
                 }
             ],
@@ -314,11 +314,11 @@
             "help_text": null,
             "selection_options": [
                 {
-                    "option_name": "Enabled",
+                    "display_name": "Enabled",
                     "value": "Enabled"
                 },
                 {
-                    "option_name": "Disabled",
+                    "display_name": "Disabled",
                     "value": "Disabled"
                 }
             ],
@@ -335,11 +335,11 @@
             "help_text": null,
             "selection_options": [
                 {
-                    "option_name": "Enabled",
+                    "display_name": "Enabled",
                     "value": "Enabled"
                 },
                 {
-                    "option_name": "Disabled",
+                    "display_name": "Disabled",
                     "value": "Disabled"
                 }
             ],
@@ -356,11 +356,11 @@
             "help_text": null,
             "selection_options": [
                 {
-                    "option_name": "Enabled",
+                    "display_name": "Enabled",
                     "value": "Enabled"
                 },
                 {
-                    "option_name": "Disabled",
+                    "display_name": "Disabled",
                     "value": "Disabled"
                 }
             ],

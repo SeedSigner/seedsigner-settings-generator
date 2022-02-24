@@ -139,138 +139,93 @@
                 <input type="text" class="form-control" id="config_name" maxlength="32">
             </td>
         </tr>
-        
+        {% for entry in settings_entries %}
             <tr>
-                <td class="label">Persistent settings</td>
+                <td class="label">{{ entry.display_name }}</td>
                 <td>
-                    
-                </td>
-
-        
-            <tr>
-                <td class="label">Coordinator software</td>
-                <td>
-                    
-                </td>
-
-        
-            <tr>
-                <td class="label">Bitcoin network</td>
-                <td>
-                    
-                        <select id="network" class="form-select" onchange="buildConfig();">
-                            
-                                <option value="main">Mainnet</option>
-                            
-                                <option value="test">Testnet</option>
-                            
-                                <option value="regtest">Regtest</option>
-                            
+                    {% if entry.type == "select_1" %}
+                        <select id="{{ entry.attr_name }}" class="form-select" onchange="buildConfig();">
+                            {% for option in entry.selection_options %}
+                                <option value="{{ option.value }}">{{ option.display_name }}</option>
+                            {% endfor %}
                         </select>
-                    
+                    {% endif %}
                 </td>
 
-        
-            <tr>
-                <td class="label">QR code density</td>
-                <td>
-                    
-                        <select id="qr_density" class="form-select" onchange="buildConfig();">
-                            
-                                <option value="L">Low</option>
-                            
-                                <option value="M">Medium</option>
-                            
-                                <option value="H">High</option>
-                            
-                        </select>
-                    
-                </td>
-
-        
-            <tr>
-                <td class="label">Xpub export</td>
-                <td>
-                    
-                </td>
-
-        
-            <tr>
-                <td class="label">Sig types</td>
-                <td>
-                    
-                </td>
-
-        
-            <tr>
-                <td class="label">Script types</td>
-                <td>
-                    
-                </td>
-
-        
-            <tr>
-                <td class="label">Show xpub details</td>
-                <td>
-                    
-                </td>
-
-        
-            <tr>
-                <td class="label">BIP-39 passphrase</td>
-                <td>
-                    
-                </td>
-
-        
-            <tr>
-                <td class="label">Camera rotation</td>
-                <td>
-                    
-                        <select id="camera_rotation" class="form-select" onchange="buildConfig();">
-                            
-                                <option value="0">0°</option>
-                            
-                                <option value="90">90°</option>
-                            
-                                <option value="180">180°</option>
-                            
-                                <option value="270">270°</option>
-                            
-                        </select>
-                    
-                </td>
-
-        
-            <tr>
-                <td class="label">CompactSeedQR</td>
-                <td>
-                    
-                </td>
-
-        
-            <tr>
-                <td class="label">Show privacy warnings</td>
-                <td>
-                    
-                </td>
-
-        
-            <tr>
-                <td class="label">Show dire warnings</td>
-                <td>
-                    
-                </td>
-
-        
-            <tr>
-                <td class="label">Debug</td>
-                <td>
-                    
-                </td>
-
-        
-        
+        {% endfor %}
+        {# <tr>
+            <td class="label">Xpub export:</td>
+            <td>
+                <select id="xpub_export" class="form-select" onchange="buildConfig();">
+                    <option value="0">Disabled</option>
+                    <option value="1" selected>Enabled</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="label"></td>
+            <td>
+                <div class="label sublabel">Sig types:</div>
+                <label for="sig_types_s"><input type="checkbox" checked name="sig_types" id="sig_types_s" value="s" class="" onchange="buildConfig();">&nbsp;Single Sig</label><br/>
+                <label for="sig_types_m"><input type="checkbox" checked name="sig_types" id="sig_types_m" value="m" class="" onchange="buildConfig();">&nbsp;Multisig</label><br/>
+            </td>
+        </tr>
+        <tr>
+            <td class="label"></td>
+            <td>
+                <div class="label sublabel">Script types:</div>
+                <label for="script_types_na"><input type="checkbox" checked name="script_types" id="script_types_na" value="na" class="" onchange="buildConfig();">&nbsp;Native Segwit</label><br/>
+                <label for="script_types_ne"><input type="checkbox" checked name="script_types" id="script_types_ne" value="ne" class="" onchange="buildConfig();">&nbsp;Nested Segwit (Legacy)</label><br/>
+                <label for="script_types_tr"><input type="checkbox" checked name="script_types" id="script_types_tr" value="tr" class="" onchange="buildConfig();">&nbsp;Taproot</label><br/>
+                <label for="script_types_cu"><input type="checkbox"         name="script_types" id="script_types_cu" value="cu" class="" onchange="buildConfig();">&nbsp;Custom Derivation Path</label><br/>
+            </td>
+        </tr>
+        <tr>
+            <td class="label"></td>
+            <td>
+                <div class="label sublabel">Show Xpub details:</div>
+                <select id="xpub_details" class="form-select" onchange="buildConfig();">
+                    <option value="0">Disabled</option>
+                    <option value="1" selected>Enabled</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="label label-top">Coordinators:</td>
+            <td>
+                <label for="coordinator_bw"><input type="checkbox" checked name="coordinator" id="coordinator_bw" value="bw" class="" onchange="buildConfig();">&nbsp;BlueWallet</label><br/>
+                <label for="coordinator_sw"><input type="checkbox" checked name="coordinator" id="coordinator_sw" value="sw" class="" onchange="buildConfig();">&nbsp;Sparrow</label><br/>
+                <label for="coordinator_sd"><input type="checkbox" checked name="coordinator" id="coordinator_sd" value="sd" class="" onchange="buildConfig();">&nbsp;Specter&nbsp;Desktop</label><br/>
+            </td>
+        </tr>
+        <tr>
+            <td class="label">Passphrase:</td>
+            <td>
+                <select id="passphrase" class="form-select" onchange="buildConfig();">
+                    <option value="0">Disabled</option>
+                    <option value="1" selected>Enabled</option>
+                    <option value="2">Always ask</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="label">Privacy warnings:</td>
+            <td>
+                <select id="privacy_warnings" class="form-select" onchange="buildConfig();">
+                    <option value="0">Disabled</option>
+                    <option value="1" selected>Enabled</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="label">Dire warnings:</td>
+            <td>
+                <select id="dire_warnings" class="form-select" onchange="buildConfig();">
+                    <option value="0">Disabled</option>
+                    <option value="1" selected>Enabled</option>
+                </select>
+            </td>
+        </tr> #}
     </table>
 
     <br/>
