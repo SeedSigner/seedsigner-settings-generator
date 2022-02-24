@@ -1,4 +1,4 @@
 [submodule "seedsigner"]
-	path = src/seedsigner
+	path = seedsigner
 	url = https://github.com/kdmukai/seedsigner.git
 	branch = settings_definition
