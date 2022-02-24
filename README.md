@@ -1,0 +1,2 @@
+# SeedSigner SettingsQR Generator
+
