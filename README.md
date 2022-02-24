@@ -15,4 +15,4 @@ If you prefer the offline method, get a local copy of this github repo by clicki
 
 At this point you can disconnect your computer from the internet (or transfer the project files over to your air-gapped computer).
 
-To run the SettingsQR Generator, just double-click on [docs/index.html](docs/index.html).
+To run the SettingsQR Generator, just double-click on [docs/index.html](docs/index.html?raw=1).
