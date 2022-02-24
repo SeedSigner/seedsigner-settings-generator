@@ -15,4 +15,22 @@ If you prefer the offline method, get a local copy of this github repo by clicki
 
 At this point you can disconnect your computer from the internet (or transfer the project files over to your air-gapped computer).
 
-To run the SettingsQR Generator, just double-click on [docs/index.html](docs/index.html?raw=1).
+To run the SettingsQR Generator, just double-click on docs/index.html.
+
+
+---
+
+## Developers
+
+If you need to update the SettingsQR Generator with settings changes in your SeedSigner branch, you'll need to make sure that the `.gitmodules` is pointing to the right repo and target branch:
+```
+[submodule "src/seedsigner"]
+	path = src/seedsigner
+	url = https://github.com/kdmukai/seedsigner.git
+	branch = settings_definition
+```
+
+Once your changes are made, you need to tell `git` to pull the new repo or branch:
+```
+git submodule update --remote
+```
