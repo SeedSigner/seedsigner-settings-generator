@@ -85,6 +85,12 @@
         font-size: 0.75em;
     }
 
+    .input_table .help_text {
+        color: #888;
+        font-size: 0.75em;
+        font-style: italic;
+    }
+
     .config_preview {
         margin-top: 3em;
         margin-bottom: 2em;
@@ -113,6 +119,7 @@
             font-size: 0.75em;
             padding: 0;
         }
+
     }
 
 
@@ -131,7 +138,6 @@
         <div class="note">There is NO private information in this QR code.<br/>It is safe to print or share.</div>
     </div>
 
-
     <table class="input_table">
         <tr class="no_print">
             <td class="label">Config name (optional):</td>
@@ -141,7 +147,12 @@
         </tr>
         
             <tr>
-                <td class="label">Persistent settings</td>
+                <td class="label">
+                    Persistent settings
+                    
+                        <div class="help_text">Store Settings on SD card</div>
+                    
+                </td>
                 <td>
                     
                         <div class="form-check form-switch">
@@ -152,7 +163,10 @@
 
         
             <tr>
-                <td class="label">Coordinator software</td>
+                <td class="label">
+                    Coordinator software
+                    
+                </td>
                 <td>
                     
                         
@@ -167,7 +181,10 @@
 
         
             <tr>
-                <td class="label">Bitcoin network</td>
+                <td class="label">
+                    Bitcoin network
+                    
+                </td>
                 <td>
                     
                         <select name="network" id="network" class="form-select" onchange="buildConfig();">
@@ -184,7 +201,10 @@
 
         
             <tr>
-                <td class="label">QR code density</td>
+                <td class="label">
+                    QR code density
+                    
+                </td>
                 <td>
                     
                         <select name="qr_density" id="qr_density" class="form-select" onchange="buildConfig();">
@@ -201,7 +221,10 @@
 
         
             <tr>
-                <td class="label">Xpub export</td>
+                <td class="label">
+                    Xpub export
+                    
+                </td>
                 <td>
                     
                         <div class="form-check form-switch">
@@ -212,7 +235,10 @@
 
         
             <tr>
-                <td class="label">Sig types</td>
+                <td class="label">
+                    Sig types
+                    
+                </td>
                 <td>
                     
                         
@@ -225,7 +251,10 @@
 
         
             <tr>
-                <td class="label">Script types</td>
+                <td class="label">
+                    Script types
+                    
+                </td>
                 <td>
                     
                         
@@ -242,7 +271,10 @@
 
         
             <tr>
-                <td class="label">Show xpub details</td>
+                <td class="label">
+                    Show xpub details
+                    
+                </td>
                 <td>
                     
                         <div class="form-check form-switch">
@@ -253,7 +285,10 @@
 
         
             <tr>
-                <td class="label">BIP-39 passphrase</td>
+                <td class="label">
+                    BIP-39 passphrase
+                    
+                </td>
                 <td>
                     
                         <div class="form-check form-switch">
@@ -264,7 +299,10 @@
 
         
             <tr>
-                <td class="label">Camera rotation</td>
+                <td class="label">
+                    Camera rotation
+                    
+                </td>
                 <td>
                     
                         <select name="camera_rotation" id="camera_rotation" class="form-select" onchange="buildConfig();">
@@ -283,7 +321,10 @@
 
         
             <tr>
-                <td class="label">CompactSeedQR</td>
+                <td class="label">
+                    CompactSeedQR
+                    
+                </td>
                 <td>
                     
                         <div class="form-check form-switch">
@@ -294,7 +335,10 @@
 
         
             <tr>
-                <td class="label">Show privacy warnings</td>
+                <td class="label">
+                    Show privacy warnings
+                    
+                </td>
                 <td>
                     
                         <div class="form-check form-switch">
@@ -305,7 +349,10 @@
 
         
             <tr>
-                <td class="label">Show dire warnings</td>
+                <td class="label">
+                    Show dire warnings
+                    
+                </td>
                 <td>
                     
                         <div class="form-check form-switch">
@@ -316,7 +363,10 @@
 
         
             <tr>
-                <td class="label">Debug</td>
+                <td class="label">
+                    Debug
+                    
+                </td>
                 <td>
                     
                         <div class="form-check form-switch">

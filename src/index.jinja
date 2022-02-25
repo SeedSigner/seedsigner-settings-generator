@@ -85,6 +85,12 @@
         font-size: 0.75em;
     }
 
+    .input_table .help_text {
+        color: #888;
+        font-size: 0.75em;
+        font-style: italic;
+    }
+
     .config_preview {
         margin-top: 3em;
         margin-bottom: 2em;
@@ -113,6 +119,7 @@
             font-size: 0.75em;
             padding: 0;
         }
+
     }
 
 
@@ -131,7 +138,6 @@
         <div class="note">There is NO private information in this QR code.<br/>It is safe to print or share.</div>
     </div>
 
-
     <table class="input_table">
         <tr class="no_print">
             <td class="label">Config name (optional):</td>
@@ -141,7 +147,12 @@
         </tr>
         {% for entry in settings_entries %}
             <tr>
-                <td class="label">{{ entry.display_name }}</td>
+                <td class="label">
+                    {{ entry.display_name }}
+                    {% if entry.help_text %}
+                        <div class="help_text">{{ entry.help_text }}</div>
+                    {% endif %}
+                </td>
                 <td>
                     {% if entry.type in ["select_1", "enabled_disabled_prompt", "enabled_disabled_prompt_required"] %}
                         <select name="{{ entry.attr_name }}" id="{{ entry.attr_name }}" class="form-select" onchange="buildConfig();">
