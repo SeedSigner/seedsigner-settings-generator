@@ -144,12 +144,24 @@
                 <td class="label">Persistent settings</td>
                 <td>
                     
+                        <div class="form-check form-switch">
+                            <input type="checkbox" name="persistent_settings" id="" class="form-check-input" value="E" onchange="buildConfig();" >
+                        </div>
+                    
                 </td>
 
         
             <tr>
                 <td class="label">Coordinator software</td>
                 <td>
+                    
+                        
+                            <label for="coordinators_bw"><input type="checkbox" name="coordinators" id="coordinators_bw" value="bw"  checked   onchange="buildConfig();">&nbsp;BlueWallet</label><br/>
+                        
+                            <label for="coordinators_spa"><input type="checkbox" name="coordinators" id="coordinators_spa" value="spa"  checked   onchange="buildConfig();">&nbsp;Sparrow</label><br/>
+                        
+                            <label for="coordinators_spd"><input type="checkbox" name="coordinators" id="coordinators_spd" value="spd"  checked   onchange="buildConfig();">&nbsp;Specter Desktop</label><br/>
+                        
                     
                 </td>
 
@@ -158,13 +170,13 @@
                 <td class="label">Bitcoin network</td>
                 <td>
                     
-                        <select id="network" class="form-select" onchange="buildConfig();">
+                        <select name="network" id="network" class="form-select" onchange="buildConfig();">
                             
-                                <option value="main">Mainnet</option>
+                                <option value="M" >Mainnet</option>
                             
-                                <option value="test">Testnet</option>
+                                <option value="T" >Testnet</option>
                             
-                                <option value="regtest">Regtest</option>
+                                <option value="R" selected>Regtest</option>
                             
                         </select>
                     
@@ -175,13 +187,13 @@
                 <td class="label">QR code density</td>
                 <td>
                     
-                        <select id="qr_density" class="form-select" onchange="buildConfig();">
+                        <select name="qr_density" id="qr_density" class="form-select" onchange="buildConfig();">
                             
-                                <option value="L">Low</option>
+                                <option value="L" >Low</option>
                             
-                                <option value="M">Medium</option>
+                                <option value="M" selected>Medium</option>
                             
-                                <option value="H">High</option>
+                                <option value="H" >High</option>
                             
                         </select>
                     
@@ -192,12 +204,22 @@
                 <td class="label">Xpub export</td>
                 <td>
                     
+                        <div class="form-check form-switch">
+                            <input type="checkbox" name="xpub_export" id="" class="form-check-input" value="E" onchange="buildConfig();" >
+                        </div>
+                    
                 </td>
 
         
             <tr>
                 <td class="label">Sig types</td>
                 <td>
+                    
+                        
+                            <label for="sig_types_ss"><input type="checkbox" name="sig_types" id="sig_types_ss" value="ss"  checked   onchange="buildConfig();">&nbsp;Single Sig</label><br/>
+                        
+                            <label for="sig_types_ms"><input type="checkbox" name="sig_types" id="sig_types_ms" value="ms"  checked   onchange="buildConfig();">&nbsp;Multisig</label><br/>
+                        
                     
                 </td>
 
@@ -206,12 +228,26 @@
                 <td class="label">Script types</td>
                 <td>
                     
+                        
+                            <label for="script_types_nat"><input type="checkbox" name="script_types" id="script_types_nat" value="nat"  checked   onchange="buildConfig();">&nbsp;Native Segwit</label><br/>
+                        
+                            <label for="script_types_nes"><input type="checkbox" name="script_types" id="script_types_nes" value="nes"  checked   onchange="buildConfig();">&nbsp;Nested Segwit (legacy)</label><br/>
+                        
+                            <label for="script_types_tr"><input type="checkbox" name="script_types" id="script_types_tr" value="tr"   onchange="buildConfig();">&nbsp;Taproot</label><br/>
+                        
+                            <label for="script_types_cus"><input type="checkbox" name="script_types" id="script_types_cus" value="cus"   onchange="buildConfig();">&nbsp;Custom Derivation</label><br/>
+                        
+                    
                 </td>
 
         
             <tr>
                 <td class="label">Show xpub details</td>
                 <td>
+                    
+                        <div class="form-check form-switch">
+                            <input type="checkbox" name="xpub_details" id="" class="form-check-input" value="E" onchange="buildConfig();" >
+                        </div>
                     
                 </td>
 
@@ -220,6 +256,10 @@
                 <td class="label">BIP-39 passphrase</td>
                 <td>
                     
+                        <div class="form-check form-switch">
+                            <input type="checkbox" name="passphrase" id="" class="form-check-input" value="E" onchange="buildConfig();" >
+                        </div>
+                    
                 </td>
 
         
@@ -227,15 +267,15 @@
                 <td class="label">Camera rotation</td>
                 <td>
                     
-                        <select id="camera_rotation" class="form-select" onchange="buildConfig();">
+                        <select name="camera_rotation" id="camera_rotation" class="form-select" onchange="buildConfig();">
                             
-                                <option value="0">0°</option>
+                                <option value="0" selected>0°</option>
                             
-                                <option value="90">90°</option>
+                                <option value="90" >90°</option>
                             
-                                <option value="180">180°</option>
+                                <option value="180" >180°</option>
                             
-                                <option value="270">270°</option>
+                                <option value="270" >270°</option>
                             
                         </select>
                     
@@ -246,12 +286,20 @@
                 <td class="label">CompactSeedQR</td>
                 <td>
                     
+                        <div class="form-check form-switch">
+                            <input type="checkbox" name="compact_seedqr" id="" class="form-check-input" value="E" onchange="buildConfig();" >
+                        </div>
+                    
                 </td>
 
         
             <tr>
                 <td class="label">Show privacy warnings</td>
                 <td>
+                    
+                        <div class="form-check form-switch">
+                            <input type="checkbox" name="privacy_warnings" id="" class="form-check-input" value="E" onchange="buildConfig();" >
+                        </div>
                     
                 </td>
 
@@ -260,12 +308,20 @@
                 <td class="label">Show dire warnings</td>
                 <td>
                     
+                        <div class="form-check form-switch">
+                            <input type="checkbox" name="dire_warnings" id="" class="form-check-input" value="E" onchange="buildConfig();" >
+                        </div>
+                    
                 </td>
 
         
             <tr>
                 <td class="label">Debug</td>
                 <td>
+                    
+                        <div class="form-check form-switch">
+                            <input type="checkbox" name="debug" id="" class="form-check-input" value="E" onchange="buildConfig();" >
+                        </div>
                     
                 </td>
 
@@ -293,21 +349,102 @@
             if ($("#config_name").val() != "") {
                 settings.push(`name=` + $("#config_name").val().replaceAll(" ", "_"));
             }
-            settings.push(`xpub=${parseInt($("#xpub_export").val())}`);
-            if ($("#xpub_export").val() == "0") {
-                $("input[name='sig_types']").prop('disabled', true);
-                $("input[name='script_types']").prop('disabled', true);
-            } else {
-                $("input[name='sig_types']").prop('disabled', false);
-                $("input[name='script_types']").prop('disabled', false);
-                settings.push(`sigs=${$("input[name='sig_types']:checked").map(function () {return this.value;}).get().join()}`);
-                settings.push(`scripts=${$("input[name='script_types']:checked").map(function () {return this.value;}).get().join()}`);
-            }
-            settings.push(`xp_det=${parseInt($("#xpub_details").val())}`);
-            settings.push(`passphrase=${parseInt($("#passphrase").val())}`);
-            settings.push(`coord=${$("input[name='coordinator']:checked").map(function () {return this.value;}).get().join()}`);
-            settings.push(`priv_warn=${parseInt($("#privacy_warnings").val())}`);
-            settings.push(`dire_warn=${parseInt($("#dire_warnings").val())}`);
+
+            
+                
+                    if ($("input[name='persistent_settings']:checked").length > 0) {
+                        settings.push(`persistent_settings=${$("input[name='persistent_settings']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                
+
+            
+                
+                    if ($("input[name='coordinators']:checked").length > 0) {
+                        settings.push(`coordinators=${$("input[name='coordinators']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                
+
+            
+                
+                    settings.push(`network=${$("#network").val()}`);
+                
+
+            
+                
+                    settings.push(`qr_density=${$("#qr_density").val()}`);
+                
+
+            
+                
+                    if ($("input[name='xpub_export']:checked").length > 0) {
+                        settings.push(`xpub_export=${$("input[name='xpub_export']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                
+
+            
+                
+                    if ($("input[name='sig_types']:checked").length > 0) {
+                        settings.push(`sig_types=${$("input[name='sig_types']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                
+
+            
+                
+                    if ($("input[name='script_types']:checked").length > 0) {
+                        settings.push(`script_types=${$("input[name='script_types']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                
+
+            
+                
+                    if ($("input[name='xpub_details']:checked").length > 0) {
+                        settings.push(`xpub_details=${$("input[name='xpub_details']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                
+
+            
+                
+                    if ($("input[name='passphrase']:checked").length > 0) {
+                        settings.push(`passphrase=${$("input[name='passphrase']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                
+
+            
+                
+                    settings.push(`camera_rotation=${$("#camera_rotation").val()}`);
+                
+
+            
+                
+                    if ($("input[name='compact_seedqr']:checked").length > 0) {
+                        settings.push(`compact_seedqr=${$("input[name='compact_seedqr']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                
+
+            
+                
+                    if ($("input[name='privacy_warnings']:checked").length > 0) {
+                        settings.push(`privacy_warnings=${$("input[name='privacy_warnings']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                
+
+            
+                
+                    if ($("input[name='dire_warnings']:checked").length > 0) {
+                        settings.push(`dire_warnings=${$("input[name='dire_warnings']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                
+
+            
+                
+                    if ($("input[name='debug']:checked").length > 0) {
+                        settings.push(`debug=${$("input[name='debug']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                
+
+            
+
+            
 
             var config = settings.join(" ");
             $("#config_preview").html("<pre>" + settings.join("\n") + "</pre>");

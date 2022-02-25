@@ -46,14 +46,14 @@
             "selection_options": [
                 {
                     "display_name": "Enabled",
-                    "value": "Enabled"
+                    "value": "E"
                 },
                 {
                     "display_name": "Disabled",
-                    "value": "Disabled"
+                    "value": "D"
                 }
             ],
-            "default_value": "Disabled"
+            "default_value": "D"
         },
         {
             "category": "wallet",
@@ -67,21 +67,21 @@
             "selection_options": [
                 {
                     "display_name": "BlueWallet",
-                    "value": "BlueWallet"
+                    "value": "bw"
                 },
                 {
                     "display_name": "Sparrow",
-                    "value": "Sparrow"
+                    "value": "spa"
                 },
                 {
                     "display_name": "Specter Desktop",
-                    "value": "Specter Desktop"
+                    "value": "spd"
                 }
             ],
             "default_value": [
-                "BlueWallet",
-                "Sparrow",
-                "Specter Desktop"
+                "bw",
+                "spa",
+                "spd"
             ]
         },
         {
@@ -96,18 +96,18 @@
             "selection_options": [
                 {
                     "display_name": "Mainnet",
-                    "value": "main"
+                    "value": "M"
                 },
                 {
                     "display_name": "Testnet",
-                    "value": "test"
+                    "value": "T"
                 },
                 {
                     "display_name": "Regtest",
-                    "value": "regtest"
+                    "value": "R"
                 }
             ],
-            "default_value": "regtest"
+            "default_value": "R"
         },
         {
             "category": "features",
@@ -146,14 +146,14 @@
             "selection_options": [
                 {
                     "display_name": "Enabled",
-                    "value": "Enabled"
+                    "value": "E"
                 },
                 {
                     "display_name": "Disabled",
-                    "value": "Disabled"
+                    "value": "D"
                 }
             ],
-            "default_value": "Enabled"
+            "default_value": "E"
         },
         {
             "category": "features",
@@ -167,16 +167,16 @@
             "selection_options": [
                 {
                     "display_name": "Single Sig",
-                    "value": "single_sig"
+                    "value": "ss"
                 },
                 {
                     "display_name": "Multisig",
-                    "value": "multisig"
+                    "value": "ms"
                 }
             ],
             "default_value": [
-                "single_sig",
-                "multisig"
+                "ss",
+                "ms"
             ]
         },
         {
@@ -191,24 +191,24 @@
             "selection_options": [
                 {
                     "display_name": "Native Segwit",
-                    "value": "native_segwit"
+                    "value": "nat"
                 },
                 {
                     "display_name": "Nested Segwit (legacy)",
-                    "value": "nested_segwit"
+                    "value": "nes"
                 },
                 {
                     "display_name": "Taproot",
-                    "value": "taproot"
+                    "value": "tr"
                 },
                 {
                     "display_name": "Custom Derivation",
-                    "value": "custom_derivation"
+                    "value": "cus"
                 }
             ],
             "default_value": [
-                "native_segwit",
-                "nested_segwit"
+                "nat",
+                "nes"
             ]
         },
         {
@@ -223,14 +223,14 @@
             "selection_options": [
                 {
                     "display_name": "Enabled",
-                    "value": "Enabled"
+                    "value": "E"
                 },
                 {
                     "display_name": "Disabled",
-                    "value": "Disabled"
+                    "value": "D"
                 }
             ],
-            "default_value": "Enabled"
+            "default_value": "E"
         },
         {
             "category": "features",
@@ -244,14 +244,14 @@
             "selection_options": [
                 {
                     "display_name": "Enabled",
-                    "value": "Enabled"
+                    "value": "E"
                 },
                 {
                     "display_name": "Disabled",
-                    "value": "Disabled"
+                    "value": "D"
                 }
             ],
-            "default_value": "Enabled"
+            "default_value": "E"
         },
         {
             "category": "features",
@@ -294,14 +294,14 @@
             "selection_options": [
                 {
                     "display_name": "Enabled",
-                    "value": "Enabled"
+                    "value": "E"
                 },
                 {
                     "display_name": "Disabled",
-                    "value": "Disabled"
+                    "value": "D"
                 }
             ],
-            "default_value": "Disabled"
+            "default_value": "D"
         },
         {
             "category": "features",
@@ -315,14 +315,14 @@
             "selection_options": [
                 {
                     "display_name": "Enabled",
-                    "value": "Enabled"
+                    "value": "E"
                 },
                 {
                     "display_name": "Disabled",
-                    "value": "Disabled"
+                    "value": "D"
                 }
             ],
-            "default_value": "Enabled"
+            "default_value": "E"
         },
         {
             "category": "features",
@@ -336,14 +336,14 @@
             "selection_options": [
                 {
                     "display_name": "Enabled",
-                    "value": "Enabled"
+                    "value": "E"
                 },
                 {
                     "display_name": "Disabled",
-                    "value": "Disabled"
+                    "value": "D"
                 }
             ],
-            "default_value": "Enabled"
+            "default_value": "E"
         },
         {
             "category": "system",
@@ -357,14 +357,14 @@
             "selection_options": [
                 {
                     "display_name": "Enabled",
-                    "value": "Enabled"
+                    "value": "E"
                 },
                 {
                     "display_name": "Disabled",
-                    "value": "Disabled"
+                    "value": "D"
                 }
             ],
-            "default_value": "Disabled"
+            "default_value": "D"
         },
         {
             "category": "system",

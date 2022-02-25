@@ -143,12 +143,20 @@
             <tr>
                 <td class="label">{{ entry.display_name }}</td>
                 <td>
-                    {% if entry.type == "select_1" %}
-                        <select id="{{ entry.attr_name }}" class="form-select" onchange="buildConfig();">
+                    {% if entry.type in ["select_1", "enabled_disabled_prompt", "enabled_disabled_prompt_required"] %}
+                        <select name="{{ entry.attr_name }}" id="{{ entry.attr_name }}" class="form-select" onchange="buildConfig();">
                             {% for option in entry.selection_options %}
-                                <option value="{{ option.value }}">{{ option.display_name }}</option>
+                                <option value="{{ option.value }}" {% if option.value == entry.default_value %}selected{% endif %}>{{ option.display_name }}</option>
                             {% endfor %}
                         </select>
+                    {% elif entry.type == "enabled_disabled" %}
+                        <div class="form-check form-switch">
+                            <input type="checkbox" name="{{ entry.attr_name }}" id="{{ entry.addr_name }}" class="form-check-input" value="E" onchange="buildConfig();" {% if entry.default_value == "Enabled" %} checked {% endif %}>
+                        </div>
+                    {% elif entry.type == "multiselect" %}
+                        {% for option in entry.selection_options %}
+                            <label for="{{ entry.attr_name }}_{{ option.value }}"><input type="checkbox" name="{{ entry.attr_name }}" id="{{ entry.attr_name }}_{{ option.value }}" value="{{ option.value }}" {% if option.value in entry.default_value %} checked {% endif %}  onchange="buildConfig();">&nbsp;{{ option.display_name }}</label><br/>
+                        {% endfor %}
                     {% endif %}
                 </td>
 
@@ -248,7 +256,19 @@
             if ($("#config_name").val() != "") {
                 settings.push(`name=` + $("#config_name").val().replaceAll(" ", "_"));
             }
-            settings.push(`xpub=${parseInt($("#xpub_export").val())}`);
+
+            {% for entry in settings_entries %}
+                {% if entry.type in ["select_1", "enabled_disabled_prompt", "enabled_disabled_prompt_required"] %}
+                    settings.push(`{{ entry.attr_name }}=${$("#{{ entry.attr_name }}").val()}`);
+                {% elif entry.type in ["multiselect", "enabled_disabled"] %}
+                    if ($("input[name='{{ entry.attr_name }}']:checked").length > 0) {
+                        settings.push(`{{ entry.attr_name }}=${$("input[name='{{ entry.attr_name }}']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                {% endif %}
+
+            {% endfor %}
+
+            {# settings.push(`xpub=${parseInt($("#xpub_export").val())}`);
             if ($("#xpub_export").val() == "0") {
                 $("input[name='sig_types']").prop('disabled', true);
                 $("input[name='script_types']").prop('disabled', true);
@@ -262,7 +282,7 @@
             settings.push(`passphrase=${parseInt($("#passphrase").val())}`);
             settings.push(`coord=${$("input[name='coordinator']:checked").map(function () {return this.value;}).get().join()}`);
             settings.push(`priv_warn=${parseInt($("#privacy_warnings").val())}`);
-            settings.push(`dire_warn=${parseInt($("#dire_warnings").val())}`);
+            settings.push(`dire_warn=${parseInt($("#dire_warnings").val())}`); #}
 
             var config = settings.join(" ");
             $("#config_preview").html("<pre>" + settings.join("\n") + "</pre>");
