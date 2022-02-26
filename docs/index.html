@@ -156,11 +156,10 @@
                 <td>
                     
                         <div class="form-check form-switch">
-                            <input type="checkbox" name="persistent_settings" id="" class="form-check-input" value="E" onchange="buildConfig();" >
+                            <input type="checkbox" name="persistent_settings" id="" class="form-check-input" value="E" onchange="buildConfig();"  autocomplete="off">
                         </div>
                     
                 </td>
-
         
             <tr>
                 <td class="label">
@@ -170,15 +169,14 @@
                 <td>
                     
                         
-                            <label for="coordinators_bw"><input type="checkbox" name="coordinators" id="coordinators_bw" value="bw"  checked   onchange="buildConfig();">&nbsp;BlueWallet</label><br/>
+                            <label for="coordinators_bw"><input type="checkbox" name="coordinators" id="coordinators_bw" value="bw"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;BlueWallet</label><br/>
                         
-                            <label for="coordinators_spa"><input type="checkbox" name="coordinators" id="coordinators_spa" value="spa"  checked   onchange="buildConfig();">&nbsp;Sparrow</label><br/>
+                            <label for="coordinators_spa"><input type="checkbox" name="coordinators" id="coordinators_spa" value="spa"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Sparrow</label><br/>
                         
-                            <label for="coordinators_spd"><input type="checkbox" name="coordinators" id="coordinators_spd" value="spd"  checked   onchange="buildConfig();">&nbsp;Specter Desktop</label><br/>
+                            <label for="coordinators_spd"><input type="checkbox" name="coordinators" id="coordinators_spd" value="spd"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Specter Desktop</label><br/>
                         
                     
                 </td>
-
         
             <tr>
                 <td class="label">
@@ -187,7 +185,7 @@
                 </td>
                 <td>
                     
-                        <select name="network" id="network" class="form-select" onchange="buildConfig();">
+                        <select name="network" id="network" class="form-select" onchange="buildConfig();" autocomplete="off">
                             
                                 <option value="M" >Mainnet</option>
                             
@@ -198,7 +196,6 @@
                         </select>
                     
                 </td>
-
         
             <tr>
                 <td class="label">
@@ -207,7 +204,7 @@
                 </td>
                 <td>
                     
-                        <select name="qr_density" id="qr_density" class="form-select" onchange="buildConfig();">
+                        <select name="qr_density" id="qr_density" class="form-select" onchange="buildConfig();" autocomplete="off">
                             
                                 <option value="L" >Low</option>
                             
@@ -218,7 +215,6 @@
                         </select>
                     
                 </td>
-
         
             <tr>
                 <td class="label">
@@ -228,11 +224,10 @@
                 <td>
                     
                         <div class="form-check form-switch">
-                            <input type="checkbox" name="xpub_export" id="" class="form-check-input" value="E" onchange="buildConfig();" >
+                            <input type="checkbox" name="xpub_export" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
                         </div>
                     
                 </td>
-
         
             <tr>
                 <td class="label">
@@ -242,13 +237,12 @@
                 <td>
                     
                         
-                            <label for="sig_types_ss"><input type="checkbox" name="sig_types" id="sig_types_ss" value="ss"  checked   onchange="buildConfig();">&nbsp;Single Sig</label><br/>
+                            <label for="sig_types_ss"><input type="checkbox" name="sig_types" id="sig_types_ss" value="ss"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Single Sig</label><br/>
                         
-                            <label for="sig_types_ms"><input type="checkbox" name="sig_types" id="sig_types_ms" value="ms"  checked   onchange="buildConfig();">&nbsp;Multisig</label><br/>
+                            <label for="sig_types_ms"><input type="checkbox" name="sig_types" id="sig_types_ms" value="ms"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Multisig</label><br/>
                         
                     
                 </td>
-
         
             <tr>
                 <td class="label">
@@ -258,17 +252,16 @@
                 <td>
                     
                         
-                            <label for="script_types_nat"><input type="checkbox" name="script_types" id="script_types_nat" value="nat"  checked   onchange="buildConfig();">&nbsp;Native Segwit</label><br/>
+                            <label for="script_types_nat"><input type="checkbox" name="script_types" id="script_types_nat" value="nat"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Native Segwit</label><br/>
                         
-                            <label for="script_types_nes"><input type="checkbox" name="script_types" id="script_types_nes" value="nes"  checked   onchange="buildConfig();">&nbsp;Nested Segwit (legacy)</label><br/>
+                            <label for="script_types_nes"><input type="checkbox" name="script_types" id="script_types_nes" value="nes"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Nested Segwit (legacy)</label><br/>
                         
-                            <label for="script_types_tr"><input type="checkbox" name="script_types" id="script_types_tr" value="tr"   onchange="buildConfig();">&nbsp;Taproot</label><br/>
+                            <label for="script_types_tr"><input type="checkbox" name="script_types" id="script_types_tr" value="tr"   onchange="buildConfig();" autocomplete="off">&nbsp;Taproot</label><br/>
                         
-                            <label for="script_types_cus"><input type="checkbox" name="script_types" id="script_types_cus" value="cus"   onchange="buildConfig();">&nbsp;Custom Derivation</label><br/>
+                            <label for="script_types_cus"><input type="checkbox" name="script_types" id="script_types_cus" value="cus"   onchange="buildConfig();" autocomplete="off">&nbsp;Custom Derivation</label><br/>
                         
                     
                 </td>
-
         
             <tr>
                 <td class="label">
@@ -278,11 +271,10 @@
                 <td>
                     
                         <div class="form-check form-switch">
-                            <input type="checkbox" name="xpub_details" id="" class="form-check-input" value="E" onchange="buildConfig();" >
+                            <input type="checkbox" name="xpub_details" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
                         </div>
                     
                 </td>
-
         
             <tr>
                 <td class="label">
@@ -292,11 +284,10 @@
                 <td>
                     
                         <div class="form-check form-switch">
-                            <input type="checkbox" name="passphrase" id="" class="form-check-input" value="E" onchange="buildConfig();" >
+                            <input type="checkbox" name="passphrase" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
                         </div>
                     
                 </td>
-
         
             <tr>
                 <td class="label">
@@ -305,7 +296,7 @@
                 </td>
                 <td>
                     
-                        <select name="camera_rotation" id="camera_rotation" class="form-select" onchange="buildConfig();">
+                        <select name="camera_rotation" id="camera_rotation" class="form-select" onchange="buildConfig();" autocomplete="off">
                             
                                 <option value="0" selected>0°</option>
                             
@@ -318,7 +309,6 @@
                         </select>
                     
                 </td>
-
         
             <tr>
                 <td class="label">
@@ -328,11 +318,10 @@
                 <td>
                     
                         <div class="form-check form-switch">
-                            <input type="checkbox" name="compact_seedqr" id="" class="form-check-input" value="E" onchange="buildConfig();" >
+                            <input type="checkbox" name="compact_seedqr" id="" class="form-check-input" value="E" onchange="buildConfig();"  autocomplete="off">
                         </div>
                     
                 </td>
-
         
             <tr>
                 <td class="label">
@@ -342,11 +331,10 @@
                 <td>
                     
                         <div class="form-check form-switch">
-                            <input type="checkbox" name="privacy_warnings" id="" class="form-check-input" value="E" onchange="buildConfig();" >
+                            <input type="checkbox" name="privacy_warnings" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
                         </div>
                     
                 </td>
-
         
             <tr>
                 <td class="label">
@@ -356,11 +344,10 @@
                 <td>
                     
                         <div class="form-check form-switch">
-                            <input type="checkbox" name="dire_warnings" id="" class="form-check-input" value="E" onchange="buildConfig();" >
+                            <input type="checkbox" name="dire_warnings" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
                         </div>
                     
                 </td>
-
         
             <tr>
                 <td class="label">
@@ -370,12 +357,10 @@
                 <td>
                     
                         <div class="form-check form-switch">
-                            <input type="checkbox" name="debug" id="" class="form-check-input" value="E" onchange="buildConfig();" >
+                            <input type="checkbox" name="debug" id="" class="form-check-input" value="E" onchange="buildConfig();"  autocomplete="off">
                         </div>
                     
                 </td>
-
-        
         
     </table>
 
@@ -491,8 +476,6 @@
                         settings.push(`debug=${$("input[name='debug']:checked").map(function () {return this.value;}).get().join()}`);
                     }
                 
-
-            
 
             
 

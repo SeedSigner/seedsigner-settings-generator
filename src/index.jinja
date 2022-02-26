@@ -155,18 +155,18 @@
                 </td>
                 <td>
                     {% if entry.type in ["select_1", "enabled_disabled_prompt", "enabled_disabled_prompt_required"] %}
-                        <select name="{{ entry.attr_name }}" id="{{ entry.attr_name }}" class="form-select" onchange="buildConfig();">
+                        <select name="{{ entry.attr_name }}" id="{{ entry.attr_name }}" class="form-select" onchange="buildConfig();" autocomplete="off">
                             {% for option in entry.selection_options %}
                                 <option value="{{ option.value }}" {% if option.value == entry.default_value %}selected{% endif %}>{{ option.display_name }}</option>
                             {% endfor %}
                         </select>
                     {% elif entry.type == "enabled_disabled" %}
                         <div class="form-check form-switch">
-                            <input type="checkbox" name="{{ entry.attr_name }}" id="{{ entry.addr_name }}" class="form-check-input" value="E" onchange="buildConfig();" {% if entry.default_value == "Enabled" %} checked {% endif %}>
+                            <input type="checkbox" name="{{ entry.attr_name }}" id="{{ entry.addr_name }}" class="form-check-input" value="E" onchange="buildConfig();" {% if entry.default_value == "E" %} checked {% endif %} autocomplete="off">
                         </div>
                     {% elif entry.type == "multiselect" %}
                         {% for option in entry.selection_options %}
-                            <label for="{{ entry.attr_name }}_{{ option.value }}"><input type="checkbox" name="{{ entry.attr_name }}" id="{{ entry.attr_name }}_{{ option.value }}" value="{{ option.value }}" {% if option.value in entry.default_value %} checked {% endif %}  onchange="buildConfig();">&nbsp;{{ option.display_name }}</label><br/>
+                            <label for="{{ entry.attr_name }}_{{ option.value }}"><input type="checkbox" name="{{ entry.attr_name }}" id="{{ entry.attr_name }}_{{ option.value }}" value="{{ option.value }}" {% if option.value in entry.default_value %} checked {% endif %}  onchange="buildConfig();" autocomplete="off">&nbsp;{{ option.display_name }}</label><br/>
                         {% endfor %}
                     {% endif %}
                 </td>

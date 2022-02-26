@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# pull the latest from our target SeedSigner fork/branch
+git submodule update --remote
+
 cd src
 
 # generate the settings_definition.json from SettingsDefinition in SeedSigner
