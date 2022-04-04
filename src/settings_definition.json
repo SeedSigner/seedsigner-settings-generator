@@ -42,7 +42,7 @@
             "abbreviated_name": null,
             "visibility": "general",
             "type": "enabled_disabled",
-            "help_text": "Store Settings on SD card",
+            "help_text": "Store Settings on SD card.",
             "selection_options": [
                 {
                     "display_name": "Enabled",
@@ -70,6 +70,10 @@
                     "value": "bw"
                 },
                 {
+                    "display_name": "Nunchuk",
+                    "value": "nun"
+                },
+                {
                     "display_name": "Sparrow",
                     "value": "spa"
                 },
@@ -80,9 +84,39 @@
             ],
             "default_value": [
                 "bw",
+                "nun",
                 "spa",
                 "spd"
             ]
+        },
+        {
+            "category": "system",
+            "attr_name": "denomination",
+            "display_name": "Denomination display",
+            "verbose_name": null,
+            "abbreviated_name": null,
+            "visibility": "general",
+            "type": "select_1",
+            "help_text": null,
+            "selection_options": [
+                {
+                    "display_name": "Btc-only",
+                    "value": "btc"
+                },
+                {
+                    "display_name": "Sats-only",
+                    "value": "sats"
+                },
+                {
+                    "display_name": "Threshold at 0.01",
+                    "value": "thr"
+                },
+                {
+                    "display_name": "Btc | Sats hybrid",
+                    "value": "hyb"
+                }
+            ],
+            "default_value": "thr"
         },
         {
             "category": "features",
@@ -107,7 +141,7 @@
                     "value": "R"
                 }
             ],
-            "default_value": "R"
+            "default_value": "M"
         },
         {
             "category": "features",
@@ -239,7 +273,7 @@
             "verbose_name": null,
             "abbreviated_name": null,
             "visibility": "advanced",
-            "type": "enabled_disabled",
+            "type": "select_1",
             "help_text": null,
             "selection_options": [
                 {
@@ -249,6 +283,10 @@
                 {
                     "display_name": "Disabled",
                     "value": "D"
+                },
+                {
+                    "display_name": "Required",
+                    "value": "R"
                 }
             ],
             "default_value": "E"
@@ -346,12 +384,12 @@
             "default_value": "E"
         },
         {
-            "category": "system",
-            "attr_name": "debug",
-            "display_name": "Debug",
+            "category": "features",
+            "attr_name": "partner_logos",
+            "display_name": "Show partner logos",
             "verbose_name": null,
             "abbreviated_name": null,
-            "visibility": "developer",
+            "visibility": "advanced",
             "type": "enabled_disabled",
             "help_text": null,
             "selection_options": [
@@ -364,7 +402,7 @@
                     "value": "D"
                 }
             ],
-            "default_value": "D"
+            "default_value": "E"
         },
         {
             "category": "system",

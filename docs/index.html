@@ -150,7 +150,7 @@
                 <td class="label">
                     Persistent settings
                     
-                        <div class="help_text">Store Settings on SD card</div>
+                        <div class="help_text">Store Settings on SD card.</div>
                     
                 </td>
                 <td>
@@ -171,10 +171,33 @@
                         
                             <label for="coordinators_bw"><input type="checkbox" name="coordinators" id="coordinators_bw" value="bw"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;BlueWallet</label><br/>
                         
+                            <label for="coordinators_nun"><input type="checkbox" name="coordinators" id="coordinators_nun" value="nun"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Nunchuk</label><br/>
+                        
                             <label for="coordinators_spa"><input type="checkbox" name="coordinators" id="coordinators_spa" value="spa"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Sparrow</label><br/>
                         
                             <label for="coordinators_spd"><input type="checkbox" name="coordinators" id="coordinators_spd" value="spd"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Specter Desktop</label><br/>
                         
+                    
+                </td>
+        
+            <tr>
+                <td class="label">
+                    Denomination display
+                    
+                </td>
+                <td>
+                    
+                        <select name="denomination" id="denomination" class="form-select" onchange="buildConfig();" autocomplete="off">
+                            
+                                <option value="btc" >Btc-only</option>
+                            
+                                <option value="sats" >Sats-only</option>
+                            
+                                <option value="thr" selected>Threshold at 0.01</option>
+                            
+                                <option value="hyb" >Btc | Sats hybrid</option>
+                            
+                        </select>
                     
                 </td>
         
@@ -187,11 +210,11 @@
                     
                         <select name="network" id="network" class="form-select" onchange="buildConfig();" autocomplete="off">
                             
-                                <option value="M" >Mainnet</option>
+                                <option value="M" selected>Mainnet</option>
                             
                                 <option value="T" >Testnet</option>
                             
-                                <option value="R" selected>Regtest</option>
+                                <option value="R" >Regtest</option>
                             
                         </select>
                     
@@ -283,9 +306,15 @@
                 </td>
                 <td>
                     
-                        <div class="form-check form-switch">
-                            <input type="checkbox" name="passphrase" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
-                        </div>
+                        <select name="passphrase" id="passphrase" class="form-select" onchange="buildConfig();" autocomplete="off">
+                            
+                                <option value="E" selected>Enabled</option>
+                            
+                                <option value="D" >Disabled</option>
+                            
+                                <option value="R" >Required</option>
+                            
+                        </select>
                     
                 </td>
         
@@ -351,13 +380,13 @@
         
             <tr>
                 <td class="label">
-                    Debug
+                    Show partner logos
                     
                 </td>
                 <td>
                     
                         <div class="form-check form-switch">
-                            <input type="checkbox" name="debug" id="" class="form-check-input" value="E" onchange="buildConfig();"  autocomplete="off">
+                            <input type="checkbox" name="partner_logos" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
                         </div>
                     
                 </td>
@@ -401,6 +430,11 @@
 
             
                 
+                    settings.push(`denomination=${$("#denomination").val()}`);
+                
+
+            
+                
                     settings.push(`network=${$("#network").val()}`);
                 
 
@@ -439,9 +473,7 @@
 
             
                 
-                    if ($("input[name='passphrase']:checked").length > 0) {
-                        settings.push(`passphrase=${$("input[name='passphrase']:checked").map(function () {return this.value;}).get().join()}`);
-                    }
+                    settings.push(`passphrase=${$("#passphrase").val()}`);
                 
 
             
@@ -472,8 +504,8 @@
 
             
                 
-                    if ($("input[name='debug']:checked").length > 0) {
-                        settings.push(`debug=${$("input[name='debug']:checked").map(function () {return this.value;}).get().join()}`);
+                    if ($("input[name='partner_logos']:checked").length > 0) {
+                        settings.push(`partner_logos=${$("input[name='partner_logos']:checked").map(function () {return this.value;}).get().join()}`);
                     }
                 
 

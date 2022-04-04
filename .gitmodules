@@ -1,4 +1,4 @@
 [submodule "src/seedsigner"]
 	path = src/seedsigner
 	url = https://github.com/kdmukai/seedsigner.git
-	branch = ui_overhaul
+	branch = 0.5.0-rc1
