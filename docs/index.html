@@ -156,7 +156,7 @@
                 <td>
                     
                         <div class="form-check form-switch">
-                            <input type="checkbox" name="persistent_settings" id="" class="form-check-input" value="E" onchange="buildConfig();"  autocomplete="off">
+                            <input type="checkbox" name="persistent" id="" class="form-check-input" value="E" onchange="buildConfig();"  autocomplete="off">
                         </div>
                     
                 </td>
@@ -169,13 +169,15 @@
                 <td>
                     
                         
-                            <label for="coordinators_bw"><input type="checkbox" name="coordinators" id="coordinators_bw" value="bw"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;BlueWallet</label><br/>
+                            <label for="coords_bw"><input type="checkbox" name="coords" id="coords_bw" value="bw"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;BlueWallet</label><br/>
                         
-                            <label for="coordinators_nun"><input type="checkbox" name="coordinators" id="coordinators_nun" value="nun"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Nunchuk</label><br/>
+                            <label for="coords_nun"><input type="checkbox" name="coords" id="coords_nun" value="nun"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Nunchuk</label><br/>
                         
-                            <label for="coordinators_spa"><input type="checkbox" name="coordinators" id="coordinators_spa" value="spa"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Sparrow</label><br/>
+                            <label for="coords_spa"><input type="checkbox" name="coords" id="coords_spa" value="spa"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Sparrow</label><br/>
                         
-                            <label for="coordinators_spd"><input type="checkbox" name="coordinators" id="coordinators_spd" value="spd"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Specter Desktop</label><br/>
+                            <label for="coords_spd"><input type="checkbox" name="coords" id="coords_spd" value="spd"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Specter Desktop</label><br/>
+                        
+                            <label for="coords_kpr"><input type="checkbox" name="coords" id="coords_kpr" value="kpr"   onchange="buildConfig();" autocomplete="off">&nbsp;Keeper</label><br/>
                         
                     
                 </td>
@@ -187,15 +189,15 @@
                 </td>
                 <td>
                     
-                        <select name="denomination" id="denomination" class="form-select" onchange="buildConfig();" autocomplete="off">
+                        <select name="denom" id="denom" class="form-select" onchange="buildConfig();" autocomplete="off">
                             
-                                <option value="btc" >Btc-only</option>
+                                <option value="btc" >BTC</option>
                             
-                                <option value="sats" >Sats-only</option>
+                                <option value="sats" >sats</option>
                             
                                 <option value="thr" selected>Threshold at 0.01</option>
                             
-                                <option value="hyb" >Btc | Sats hybrid</option>
+                                <option value="hyb" >BTC | sats hybrid</option>
                             
                         </select>
                     
@@ -260,9 +262,9 @@
                 <td>
                     
                         
-                            <label for="sig_types_ss"><input type="checkbox" name="sig_types" id="sig_types_ss" value="ss"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Single Sig</label><br/>
+                            <label for="sigs_ss"><input type="checkbox" name="sigs" id="sigs_ss" value="ss"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Single Sig</label><br/>
                         
-                            <label for="sig_types_ms"><input type="checkbox" name="sig_types" id="sig_types_ms" value="ms"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Multisig</label><br/>
+                            <label for="sigs_ms"><input type="checkbox" name="sigs" id="sigs_ms" value="ms"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Multisig</label><br/>
                         
                     
                 </td>
@@ -275,13 +277,13 @@
                 <td>
                     
                         
-                            <label for="script_types_nat"><input type="checkbox" name="script_types" id="script_types_nat" value="nat"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Native Segwit</label><br/>
+                            <label for="scripts_nat"><input type="checkbox" name="scripts" id="scripts_nat" value="nat"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Native Segwit</label><br/>
                         
-                            <label for="script_types_nes"><input type="checkbox" name="script_types" id="script_types_nes" value="nes"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Nested Segwit (legacy)</label><br/>
+                            <label for="scripts_nes"><input type="checkbox" name="scripts" id="scripts_nes" value="nes"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Nested Segwit (legacy)</label><br/>
                         
-                            <label for="script_types_tr"><input type="checkbox" name="script_types" id="script_types_tr" value="tr"   onchange="buildConfig();" autocomplete="off">&nbsp;Taproot</label><br/>
+                            <label for="scripts_tr"><input type="checkbox" name="scripts" id="scripts_tr" value="tr"   onchange="buildConfig();" autocomplete="off">&nbsp;Taproot</label><br/>
                         
-                            <label for="script_types_cus"><input type="checkbox" name="script_types" id="script_types_cus" value="cus"   onchange="buildConfig();" autocomplete="off">&nbsp;Custom Derivation</label><br/>
+                            <label for="scripts_cus"><input type="checkbox" name="scripts" id="scripts_cus" value="cus"   onchange="buildConfig();" autocomplete="off">&nbsp;Custom Derivation</label><br/>
                         
                     
                 </td>
@@ -325,7 +327,7 @@
                 </td>
                 <td>
                     
-                        <select name="camera_rotation" id="camera_rotation" class="form-select" onchange="buildConfig();" autocomplete="off">
+                        <select name="camera" id="camera" class="form-select" onchange="buildConfig();" autocomplete="off">
                             
                                 <option value="0" selected>0°</option>
                             
@@ -347,7 +349,20 @@
                 <td>
                     
                         <div class="form-check form-switch">
-                            <input type="checkbox" name="compact_seedqr" id="" class="form-check-input" value="E" onchange="buildConfig();"  autocomplete="off">
+                            <input type="checkbox" name="compact_seedqr" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
+                        </div>
+                    
+                </td>
+        
+            <tr>
+                <td class="label">
+                    BIP-85 child seeds
+                    
+                </td>
+                <td>
+                    
+                        <div class="form-check form-switch">
+                            <input type="checkbox" name="bip85" id="" class="form-check-input" value="E" onchange="buildConfig();"  autocomplete="off">
                         </div>
                     
                 </td>
@@ -360,7 +375,7 @@
                 <td>
                     
                         <div class="form-check form-switch">
-                            <input type="checkbox" name="privacy_warnings" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
+                            <input type="checkbox" name="priv_warn" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
                         </div>
                     
                 </td>
@@ -373,7 +388,7 @@
                 <td>
                     
                         <div class="form-check form-switch">
-                            <input type="checkbox" name="dire_warnings" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
+                            <input type="checkbox" name="dire_warn" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
                         </div>
                     
                 </td>
@@ -386,7 +401,7 @@
                 <td>
                     
                         <div class="form-check form-switch">
-                            <input type="checkbox" name="partner_logos" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
+                            <input type="checkbox" name="partners" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
                         </div>
                     
                 </td>
@@ -408,29 +423,35 @@
         });
 
         function buildConfig() {
-            var settings = [`type=settings`];
-            settings.push(`version=1`);
+            var settings = [`settings::v1`];
             if ($("#config_name").val() != "") {
                 settings.push(`name=` + $("#config_name").val().replaceAll(" ", "_"));
             }
 
             
                 
-                    if ($("input[name='persistent_settings']:checked").length > 0) {
-                        settings.push(`persistent_settings=${$("input[name='persistent_settings']:checked").map(function () {return this.value;}).get().join()}`);
+                    if ($("input[name='persistent']:checked").length > 0) {
+                        settings.push(`persistent=${$("input[name='persistent']:checked").map(function () {return this.value;}).get().join()}`);
                     }
+                    
+                        if ($("input[name='persistent']:not(:checked)").length > 0) {
+                            // Set "D" for disabled
+                            settings.push(`persistent=D`);
+                        }
+                    
                 
 
             
                 
-                    if ($("input[name='coordinators']:checked").length > 0) {
-                        settings.push(`coordinators=${$("input[name='coordinators']:checked").map(function () {return this.value;}).get().join()}`);
+                    if ($("input[name='coords']:checked").length > 0) {
+                        settings.push(`coords=${$("input[name='coords']:checked").map(function () {return this.value;}).get().join()}`);
                     }
+                    
                 
 
             
                 
-                    settings.push(`denomination=${$("#denomination").val()}`);
+                    settings.push(`denom=${$("#denom").val()}`);
                 
 
             
@@ -448,20 +469,28 @@
                     if ($("input[name='xpub_export']:checked").length > 0) {
                         settings.push(`xpub_export=${$("input[name='xpub_export']:checked").map(function () {return this.value;}).get().join()}`);
                     }
+                    
+                        if ($("input[name='xpub_export']:not(:checked)").length > 0) {
+                            // Set "D" for disabled
+                            settings.push(`xpub_export=D`);
+                        }
+                    
                 
 
             
                 
-                    if ($("input[name='sig_types']:checked").length > 0) {
-                        settings.push(`sig_types=${$("input[name='sig_types']:checked").map(function () {return this.value;}).get().join()}`);
+                    if ($("input[name='sigs']:checked").length > 0) {
+                        settings.push(`sigs=${$("input[name='sigs']:checked").map(function () {return this.value;}).get().join()}`);
                     }
+                    
                 
 
             
                 
-                    if ($("input[name='script_types']:checked").length > 0) {
-                        settings.push(`script_types=${$("input[name='script_types']:checked").map(function () {return this.value;}).get().join()}`);
+                    if ($("input[name='scripts']:checked").length > 0) {
+                        settings.push(`scripts=${$("input[name='scripts']:checked").map(function () {return this.value;}).get().join()}`);
                     }
+                    
                 
 
             
@@ -469,6 +498,12 @@
                     if ($("input[name='xpub_details']:checked").length > 0) {
                         settings.push(`xpub_details=${$("input[name='xpub_details']:checked").map(function () {return this.value;}).get().join()}`);
                     }
+                    
+                        if ($("input[name='xpub_details']:not(:checked)").length > 0) {
+                            // Set "D" for disabled
+                            settings.push(`xpub_details=D`);
+                        }
+                    
                 
 
             
@@ -478,7 +513,7 @@
 
             
                 
-                    settings.push(`camera_rotation=${$("#camera_rotation").val()}`);
+                    settings.push(`camera=${$("#camera").val()}`);
                 
 
             
@@ -486,27 +521,64 @@
                     if ($("input[name='compact_seedqr']:checked").length > 0) {
                         settings.push(`compact_seedqr=${$("input[name='compact_seedqr']:checked").map(function () {return this.value;}).get().join()}`);
                     }
+                    
+                        if ($("input[name='compact_seedqr']:not(:checked)").length > 0) {
+                            // Set "D" for disabled
+                            settings.push(`compact_seedqr=D`);
+                        }
+                    
                 
 
             
                 
-                    if ($("input[name='privacy_warnings']:checked").length > 0) {
-                        settings.push(`privacy_warnings=${$("input[name='privacy_warnings']:checked").map(function () {return this.value;}).get().join()}`);
+                    if ($("input[name='bip85']:checked").length > 0) {
+                        settings.push(`bip85=${$("input[name='bip85']:checked").map(function () {return this.value;}).get().join()}`);
                     }
+                    
+                        if ($("input[name='bip85']:not(:checked)").length > 0) {
+                            // Set "D" for disabled
+                            settings.push(`bip85=D`);
+                        }
+                    
                 
 
             
                 
-                    if ($("input[name='dire_warnings']:checked").length > 0) {
-                        settings.push(`dire_warnings=${$("input[name='dire_warnings']:checked").map(function () {return this.value;}).get().join()}`);
+                    if ($("input[name='priv_warn']:checked").length > 0) {
+                        settings.push(`priv_warn=${$("input[name='priv_warn']:checked").map(function () {return this.value;}).get().join()}`);
                     }
+                    
+                        if ($("input[name='priv_warn']:not(:checked)").length > 0) {
+                            // Set "D" for disabled
+                            settings.push(`priv_warn=D`);
+                        }
+                    
                 
 
             
                 
-                    if ($("input[name='partner_logos']:checked").length > 0) {
-                        settings.push(`partner_logos=${$("input[name='partner_logos']:checked").map(function () {return this.value;}).get().join()}`);
+                    if ($("input[name='dire_warn']:checked").length > 0) {
+                        settings.push(`dire_warn=${$("input[name='dire_warn']:checked").map(function () {return this.value;}).get().join()}`);
                     }
+                    
+                        if ($("input[name='dire_warn']:not(:checked)").length > 0) {
+                            // Set "D" for disabled
+                            settings.push(`dire_warn=D`);
+                        }
+                    
+                
+
+            
+                
+                    if ($("input[name='partners']:checked").length > 0) {
+                        settings.push(`partners=${$("input[name='partners']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                    
+                        if ($("input[name='partners']:not(:checked)").length > 0) {
+                            // Set "D" for disabled
+                            settings.push(`partners=D`);
+                        }
+                    
                 
 
             

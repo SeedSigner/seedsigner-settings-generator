@@ -23,6 +23,8 @@ for entry in settings_json.get("settings_entries"):
     if entry["visibility"] == "hidden":
         print(f"""Skipping hidden setting '{entry["attr_name"]}'""")
         continue
+    if entry.get("abbreviated_name"):
+        entry["attr_name"] = entry["abbreviated_name"]
     template_data["settings_entries"].append(entry)
 
 

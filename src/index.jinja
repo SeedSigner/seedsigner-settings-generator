@@ -188,8 +188,7 @@
         });
 
         function buildConfig() {
-            var settings = [`type=settings`];
-            settings.push(`version=1`);
+            var settings = [`settings::v1`];
             if ($("#config_name").val() != "") {
                 settings.push(`name=` + $("#config_name").val().replaceAll(" ", "_"));
             }
@@ -201,6 +200,12 @@
                     if ($("input[name='{{ entry.attr_name }}']:checked").length > 0) {
                         settings.push(`{{ entry.attr_name }}=${$("input[name='{{ entry.attr_name }}']:checked").map(function () {return this.value;}).get().join()}`);
                     }
+                    {% if entry.type == "enabled_disabled" %}
+                        if ($("input[name='{{ entry.attr_name }}']:not(:checked)").length > 0) {
+                            // Set "D" for disabled
+                            settings.push(`{{ entry.attr_name }}=D`);
+                        }
+                    {% endif %}
                 {% endif %}
 
             {% endfor %}
