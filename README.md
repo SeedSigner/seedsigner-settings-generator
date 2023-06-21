@@ -22,9 +22,9 @@ To run the SettingsQR Generator, just double-click on docs/index.html.
 ---
 
 ## Developers:
-see: [developers.md](developers.md)
+see: [developers.md](docs/developers.md)
 
-see: [SettingsQR Specification](settingsqr_specification.md)
+see: [SettingsQR Specification](docs/settingsqr_specification.md)
 
 ---
 

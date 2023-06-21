@@ -2,9 +2,11 @@
 
 SettingsQRs are a way to encode the settings options for the SeedSigner into a QR code. This allows users to easily load the settings into their SeedSigner without having to manually enter them one-by-one.
 
+Because SettingsQRs only store settings options, they are safe to share publicly. They do not contain any sensitive information like seeds or xpubs.
+
 Some basic use cases:
-* An instructor has a class of bitcoin beginners and has them start by scanning a SettingsQR that disables all advanced settings. The next class is an advanced group that uses the same devices, so they begin by scanning a different SettingsQR that's customized for the day's advanced topic.
-* Customer support for a company offering collaborative custody begins each session by having the customer load the company's preferred multisig-only settings.
+* An instructor has a class of bitcoin beginners and has them start by scanning a SettingsQR that disables all advanced settings. The next class is an advanced group that uses the same devices, so they begin by scanning a different SettingsQR that's customized for their session's more advanced topic.
+* Customer support for a company offering collaborative custody begins each support call by having the customer load the company's preferred multisig-only settings.
 
 
 ## Data Format
@@ -73,3 +75,14 @@ SeedSigner will ignore any key entries that don't correspond to a `SettingsEntry
 
 ## Unrecognized values
 SeedSigner will raise an `Exception` if it encounters a value that is not in the `selection_options` list for that `SettingsEntry`.
+
+
+## Examples
+SettingsQR configured for limited options for a beginner:
+
+<img src="img/settingsqr1.png" width="400">
+
+---
+SettingsQR configured for an advanced multisig user:
+
+<img src="img/settingsqr2.png" width="400">

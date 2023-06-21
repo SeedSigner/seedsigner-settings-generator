@@ -54,8 +54,9 @@ And then any time there are further changes in the `SettingsDefinition` in your 
 
 
 ## Generate updated `index.html`
-With your target `SettingsDefinition` and your virtualenv set up, you can now just run:
+With your target `SettingsDefinition` and your virtualenv set up, you can now just run the `generate.sh` script from the src/ directory:
 ```bash
+cd src
 ./generate.sh
 ```
 
