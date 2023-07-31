@@ -7,7 +7,7 @@ The SettingsQR Generator pulls the `SettingsDefinition` class from the main Seed
 ## Set up a local copy of this repo
 To make deeper changes to the SettingsQR Generator, you'll want to clone the repo with the `--recursive` option so that it includes the nested SeedSigner core repo as well:
 ```bash
-git clone --recursive https://github.com/kdmukai/seedsigner-settings-generator.git
+git clone --recursive https://github.com/seedsigner/seedsigner-settings-generator.git
 ```
 
 <details>
@@ -41,8 +41,8 @@ Change the `url` and `branch` as needed:
 ```
 [submodule "src/seedsigner"]
 	path = src/seedsigner
-	url = https://github.com/kdmukai/seedsigner.git
-	branch = settings_definition
+	url = https://github.com/seedsigner/seedsigner.git
+	branch = dev
 ```
 
 Once your changes are made, you need to tell `git` to pull the new repo or branch:
