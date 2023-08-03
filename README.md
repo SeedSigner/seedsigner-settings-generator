@@ -5,14 +5,14 @@
 The SettingsQR Generator is just a bunch of static web files that you can run in your browser two different ways:
 
 ### Access it online
-The online hosted version is available at https://kdmukai.github.io/seedsigner-settings-generator/
+The online hosted version is available at https://seedsigner.github.io/seedsigner-settings-generator/
 
 ### Download and run offline
 You can run the SettingsQR Generator totally offline and air-gapped.
 
 Get a local copy of this github repo by clicking on the green "code" button above.
 
-* If you have `git` installed, you can `git clone https://github.com/kdmukai/seedsigner-settings-generator.git`
+* If you have `git` installed, you can `git clone https://github.com/seedsigner/seedsigner-settings-generator.git`
 * Or you can choose the "Download Zip" option
 
 At this point you can disconnect your computer from the internet (or transfer the project files over to your air-gapped computer).
