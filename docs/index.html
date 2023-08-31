@@ -150,7 +150,7 @@
                 <td class="label">
                     Persistent settings
                     
-                        <div class="help_text">Store Settings on SD card.</div>
+                        <div class="help_text">Store Settings on SD card</div>
                     
                 </td>
                 <td>
@@ -329,11 +329,11 @@
                     
                         <select name="camera" id="camera" class="form-select" onchange="buildConfig();" autocomplete="off">
                             
-                                <option value="0" selected>0°</option>
+                                <option value="0" >0°</option>
                             
                                 <option value="90" >90°</option>
                             
-                                <option value="180" >180°</option>
+                                <option value="180" selected>180°</option>
                             
                                 <option value="270" >270°</option>
                             
@@ -369,6 +369,19 @@
         
             <tr>
                 <td class="label">
+                    Message signing
+                    
+                </td>
+                <td>
+                    
+                        <div class="form-check form-switch">
+                            <input type="checkbox" name="message_signing" id="" class="form-check-input" value="E" onchange="buildConfig();"  autocomplete="off">
+                        </div>
+                    
+                </td>
+        
+            <tr>
+                <td class="label">
                     Show privacy warnings
                     
                 </td>
@@ -389,6 +402,19 @@
                     
                         <div class="form-check form-switch">
                             <input type="checkbox" name="dire_warn" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
+                        </div>
+                    
+                </td>
+        
+            <tr>
+                <td class="label">
+                    Show QR brightness tips
+                    
+                </td>
+                <td>
+                    
+                        <div class="form-check form-switch">
+                            <input type="checkbox" name="qr_brightness_tips" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
                         </div>
                     
                 </td>
@@ -441,6 +467,8 @@
                     
                 
 
+                // TODO: multiselect types can't be blank
+
             
                 
                     if ($("input[name='coords']:checked").length > 0) {
@@ -449,20 +477,28 @@
                     
                 
 
+                // TODO: multiselect types can't be blank
+
             
                 
                     settings.push(`denom=${$("#denom").val()}`);
                 
+
+                // TODO: multiselect types can't be blank
 
             
                 
                     settings.push(`network=${$("#network").val()}`);
                 
 
+                // TODO: multiselect types can't be blank
+
             
                 
                     settings.push(`qr_density=${$("#qr_density").val()}`);
                 
+
+                // TODO: multiselect types can't be blank
 
             
                 
@@ -477,6 +513,8 @@
                     
                 
 
+                // TODO: multiselect types can't be blank
+
             
                 
                     if ($("input[name='sigs']:checked").length > 0) {
@@ -485,6 +523,8 @@
                     
                 
 
+                // TODO: multiselect types can't be blank
+
             
                 
                     if ($("input[name='scripts']:checked").length > 0) {
@@ -492,6 +532,8 @@
                     }
                     
                 
+
+                // TODO: multiselect types can't be blank
 
             
                 
@@ -506,15 +548,21 @@
                     
                 
 
+                // TODO: multiselect types can't be blank
+
             
                 
                     settings.push(`passphrase=${$("#passphrase").val()}`);
                 
 
+                // TODO: multiselect types can't be blank
+
             
                 
                     settings.push(`camera=${$("#camera").val()}`);
                 
+
+                // TODO: multiselect types can't be blank
 
             
                 
@@ -529,6 +577,8 @@
                     
                 
 
+                // TODO: multiselect types can't be blank
+
             
                 
                     if ($("input[name='bip85']:checked").length > 0) {
@@ -541,6 +591,23 @@
                         }
                     
                 
+
+                // TODO: multiselect types can't be blank
+
+            
+                
+                    if ($("input[name='message_signing']:checked").length > 0) {
+                        settings.push(`message_signing=${$("input[name='message_signing']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                    
+                        if ($("input[name='message_signing']:not(:checked)").length > 0) {
+                            // Set "D" for disabled
+                            settings.push(`message_signing=D`);
+                        }
+                    
+                
+
+                // TODO: multiselect types can't be blank
 
             
                 
@@ -555,6 +622,8 @@
                     
                 
 
+                // TODO: multiselect types can't be blank
+
             
                 
                     if ($("input[name='dire_warn']:checked").length > 0) {
@@ -568,6 +637,23 @@
                     
                 
 
+                // TODO: multiselect types can't be blank
+
+            
+                
+                    if ($("input[name='qr_brightness_tips']:checked").length > 0) {
+                        settings.push(`qr_brightness_tips=${$("input[name='qr_brightness_tips']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                    
+                        if ($("input[name='qr_brightness_tips']:not(:checked)").length > 0) {
+                            // Set "D" for disabled
+                            settings.push(`qr_brightness_tips=D`);
+                        }
+                    
+                
+
+                // TODO: multiselect types can't be blank
+
             
                 
                     if ($("input[name='partners']:checked").length > 0) {
@@ -580,6 +666,8 @@
                         }
                     
                 
+
+                // TODO: multiselect types can't be blank
 
             
 
