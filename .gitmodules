@@ -1,4 +1,4 @@
 [submodule "src/seedsigner"]
 	path = src/seedsigner
-	url = https://github.com/SeedSigner/seedsigner.git
-	branch = dev
+	url = https://github.com/kdmukai/seedsigner.git
+	branch = ili9341_320x240

@@ -279,9 +279,11 @@
                         
                             <label for="scripts_nat"><input type="checkbox" name="scripts" id="scripts_nat" value="nat"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Native Segwit</label><br/>
                         
-                            <label for="scripts_nes"><input type="checkbox" name="scripts" id="scripts_nes" value="nes"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Nested Segwit (legacy)</label><br/>
+                            <label for="scripts_nes"><input type="checkbox" name="scripts" id="scripts_nes" value="nes"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Nested Segwit</label><br/>
                         
-                            <label for="scripts_tr"><input type="checkbox" name="scripts" id="scripts_tr" value="tr"   onchange="buildConfig();" autocomplete="off">&nbsp;Taproot</label><br/>
+                            <label for="scripts_leg"><input type="checkbox" name="scripts" id="scripts_leg" value="leg"   onchange="buildConfig();" autocomplete="off">&nbsp;Legacy</label><br/>
+                        
+                            <label for="scripts_tr"><input type="checkbox" name="scripts" id="scripts_tr" value="tr"  checked   onchange="buildConfig();" autocomplete="off">&nbsp;Taproot</label><br/>
                         
                             <label for="scripts_cus"><input type="checkbox" name="scripts" id="scripts_cus" value="cus"   onchange="buildConfig();" autocomplete="off">&nbsp;Custom Derivation</label><br/>
                         
@@ -369,6 +371,21 @@
         
             <tr>
                 <td class="label">
+                    Electrum seeds
+                    
+                        <div class="help_text">Native Segwit only</div>
+                    
+                </td>
+                <td>
+                    
+                        <div class="form-check form-switch">
+                            <input type="checkbox" name="electrum" id="" class="form-check-input" value="E" onchange="buildConfig();"  autocomplete="off">
+                        </div>
+                    
+                </td>
+        
+            <tr>
+                <td class="label">
                     Message signing
                     
                 </td>
@@ -428,6 +445,38 @@
                     
                         <div class="form-check form-switch">
                             <input type="checkbox" name="partners" id="" class="form-check-input" value="E" onchange="buildConfig();"  checked  autocomplete="off">
+                        </div>
+                    
+                </td>
+        
+            <tr>
+                <td class="label">
+                    Display type
+                    
+                </td>
+                <td>
+                    
+                        <select name="disp_conf" id="disp_conf" class="form-select" onchange="buildConfig();" autocomplete="off">
+                            
+                                <option value="st7789_240x240" selected>st7789 240x240</option>
+                            
+                                <option value="st7789_320x240" >st7789 320x240</option>
+                            
+                                <option value="ili9341_240x320" >ili9341 240x320</option>
+                            
+                        </select>
+                    
+                </td>
+        
+            <tr>
+                <td class="label">
+                    Invert colors
+                    
+                </td>
+                <td>
+                    
+                        <div class="form-check form-switch">
+                            <input type="checkbox" name="rgb_inv" id="" class="form-check-input" value="E" onchange="buildConfig();"  autocomplete="off">
                         </div>
                     
                 </td>
@@ -596,6 +645,21 @@
 
             
                 
+                    if ($("input[name='electrum']:checked").length > 0) {
+                        settings.push(`electrum=${$("input[name='electrum']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                    
+                        if ($("input[name='electrum']:not(:checked)").length > 0) {
+                            // Set "D" for disabled
+                            settings.push(`electrum=D`);
+                        }
+                    
+                
+
+                // TODO: multiselect types can't be blank
+
+            
+                
                     if ($("input[name='message_signing']:checked").length > 0) {
                         settings.push(`message_signing=${$("input[name='message_signing']:checked").map(function () {return this.value;}).get().join()}`);
                     }
@@ -663,6 +727,28 @@
                         if ($("input[name='partners']:not(:checked)").length > 0) {
                             // Set "D" for disabled
                             settings.push(`partners=D`);
+                        }
+                    
+                
+
+                // TODO: multiselect types can't be blank
+
+            
+                
+                    settings.push(`disp_conf=${$("#disp_conf").val()}`);
+                
+
+                // TODO: multiselect types can't be blank
+
+            
+                
+                    if ($("input[name='rgb_inv']:checked").length > 0) {
+                        settings.push(`rgb_inv=${$("input[name='rgb_inv']:checked").map(function () {return this.value;}).get().join()}`);
+                    }
+                    
+                        if ($("input[name='rgb_inv']:not(:checked)").length > 0) {
+                            // Set "D" for disabled
+                            settings.push(`rgb_inv=D`);
                         }
                     
                 
